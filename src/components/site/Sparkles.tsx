@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-type SparkleProps = { count?: number; className?: string; tone?: "rose" | "gold" | "mix" };
+type SparkleProps = { count?: number; className?: string; tone?: "rose" | "gold" | "mix" | "lavender" };
 
 export function Sparkles({ count = 24, className = "", tone = "mix" }: SparkleProps) {
   const dots = useMemo(
