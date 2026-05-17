@@ -4,12 +4,10 @@ export function Reveal({
   children,
   className = "",
   delay = 0,
-  as: As = "div",
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
-  as?: keyof JSX.IntrinsicElements;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -27,11 +25,10 @@ export function Reveal({
     io.observe(el);
     return () => io.disconnect();
   }, [delay]);
-  // @ts-expect-error dynamic tag
   return (
-    <As ref={ref} className={`reveal-on-scroll ${className}`}>
+    <div ref={ref} className={`reveal-on-scroll ${className}`}>
       {children}
-    </As>
+    </div>
   );
 }
 
